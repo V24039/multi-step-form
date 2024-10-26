@@ -1,0 +1,43 @@
+.side-bar {
+  position: absolute;
+  height: 100vh;
+  background-image: url("../../assets/images/bg-sidebar-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.step-info {
+  position: relative;
+  padding: 20px 60px 0px 30px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr 2fr);
+}
+
+.active {
+  background-color: var(--primary-light-blue);
+  color: var(--primary-marine-blue) !important;
+}
+
+.step-icon {
+  height: 30px;
+  width: 30px;
+  border: 1px solid var(--neutral-white);
+  color: var(--neutral-white);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+}
+
+
+.step-index{
+  color: var(--neutral-cool-gray);
+  font-weight: 400;
+  font-size: x-small;
+  line-height: 0px;
+}
+
+.step-text {
+  color: var(--neutral-white);
+  font-size: small;
+  line-height: 0px;
+}
