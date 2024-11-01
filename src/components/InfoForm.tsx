@@ -1,24 +1,53 @@
-import { Formik } from "formik";
-import { formInitialValues, IFormValues } from "./const";
-import { useRef } from "react";
+import { useState } from "react";
+import { Form, Formik } from "formik";
+import { FormDetails, formInitialValues, IFormValues } from "./const";
+import { FormHeader } from "./FormHeader";
+import { PersonalInfo } from "./PersonalInfo/PersonalInfo";
+import { AddOns } from "./AddOns/AddOns";
+import { SelectPlan } from "./SelectPlan/SelectPlan";
 
 const InfoForm = () => {
-  const step = useRef<number>(2);
+  const [step, setStep] = useState<number>(0);
 
   const handleSubmit = (values: IFormValues) => {
-    console.log(values);
+    if (step <= 2) {
+      setStep((prev) => prev + 1);
+    } else {
+      console.log("ans");
+      console.log(values);
+    }
   };
 
   return (
     <div>
+      <FormHeader stepNumber={step} />
       <Formik
         initialValues={formInitialValues}
-        onSubmit={handleSubmit}
-      ></Formik>
-      <div className="buttons">
-        <button onClick={() => step.current--}>Go Back</button>
-        <button onClick={() => step.current++}>Next Step</button>
-      </div>
+        onSubmit={(values) => {
+          handleSubmit(values);
+        }}
+        validationSchema={FormDetails[step].validationSchema}
+      >
+        {() => (
+          <Form>
+            {step === 0 && <PersonalInfo />}
+            {step === 1 && <SelectPlan />}
+            {step === 2 && <AddOns />}
+            <div className="buttons">
+              <button
+                type="button"
+                onClick={() => setStep((prev) => prev - 1)}
+                style={{
+                  visibility: `${step === 0 ? "hidden" : "visible"}`,
+                }}
+              >
+                Go Back
+              </button>
+              <button type="submit">Next Step</button>
+            </div>
+          </Form>
+        )}
+      </Formik>
     </div>
   );
 };
