@@ -1,13 +1,14 @@
-import './App.css'
-import { SideBar } from './components'
+import "./App.css";
+import { SideBar } from "./components";
+import InfoForm from "./components/InfoForm";
 
 function App() {
-
   return (
-    <>
-      <SideBar/>
-    </>
-  )
+    <div className="app">
+      <SideBar />
+      <InfoForm />
+    </div>
+  );
 }
 
-export default App
+export default App;
