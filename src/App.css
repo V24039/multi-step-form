@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 40px;
-  aspect-ratio: 2/1;
+  aspect-ratio: 1.5/1;
 }
 
 .buttons {
@@ -11,4 +11,31 @@
   flex-direction: row;
   justify-content: space-between;
   justify-items: flex-end;
+}
+
+.btn-submit,
+.btn-back {
+  text-align: center;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  border: 0px;
+}
+
+.btn-back:hover,
+.btn-submit:hover {
+  cursor: pointer;
+}
+
+.btn-back {
+  color: var(--neutral-cool-gray);
+  background-color: var(--neutral-white);
+  &:hover {
+    color: var(--primary-marine-blue);
+  }
+}
+
+.btn-submit {
+  color: var(--neutral-white);
+  background-color: var(--primary-marine-blue);
 }

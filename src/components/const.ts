@@ -3,7 +3,7 @@ import { number, object, string } from "yup";
 export interface IFormValues {
   name: string;
   email: string;
-  phoneNumber: number;
+  phoneNumber: number | null;
   planPeriod: string;
   plan: string;
   addOns: Array<string>;
@@ -12,7 +12,7 @@ export interface IFormValues {
 export const formInitialValues: IFormValues = {
   name: "",
   email: "",
-  phoneNumber: 0,
+  phoneNumber: null,
   planPeriod: "",
   plan: "",
   addOns: [""],
@@ -21,11 +21,7 @@ export const formInitialValues: IFormValues = {
 export const FPersonalDetailsSchema = object({
   name: string().required("This field is required"),
   email: string().email("Invalid email").required("This field is required"),
-  phoneNumber: number()
-    .integer("Invalid phone number")
-    .max(10, "Invalid phone number")
-    .min(10, "Invalid phone number")
-    .required("This field is required"),
+  phoneNumber: number().required("This field is required"),
 });
 
 export const PlanDetailsSchema = object({

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Form, Formik } from "formik";
 import { FormDetails, formInitialValues, IFormValues } from "./const";
-import { FormHeader } from "./FormHeader";
+import { FormHeader } from "./FormHeader/FormHeader";
 import { PersonalInfo } from "./PersonalInfo/PersonalInfo";
 import { AddOns } from "./AddOns/AddOns";
 import { SelectPlan } from "./SelectPlan/SelectPlan";
@@ -35,6 +35,7 @@ const InfoForm = () => {
             {step === 2 && <AddOns />}
             <div className="buttons">
               <button
+                className="btn-back"
                 type="button"
                 onClick={() => setStep((prev) => prev - 1)}
                 style={{
@@ -43,7 +44,7 @@ const InfoForm = () => {
               >
                 Go Back
               </button>
-              <button type="submit">Next Step</button>
+              <button className="btn-submit" type="submit">Next Step</button>
             </div>
           </Form>
         )}
