@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Form, Formik } from "formik";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { FormDetails, formInitialValues, IFormValues } from "./const";
 import { FormHeader } from "./FormHeader/FormHeader";
 import { PersonalInfo } from "./PersonalInfo/PersonalInfo";
@@ -7,7 +8,7 @@ import { AddOns } from "./AddOns/AddOns";
 import { SelectPlan } from "./SelectPlan/SelectPlan";
 
 const InfoForm = () => {
-  const [step, setStep] = useState<number>(0);
+  const [step, setStep] = useState<number>(1);
 
   const handleSubmit = (values: IFormValues) => {
     if (step <= 2) {
@@ -26,7 +27,7 @@ const InfoForm = () => {
         onSubmit={(values) => {
           handleSubmit(values);
         }}
-        validationSchema={FormDetails[step].validationSchema}
+        // validationSchema={FormDetails[step].validationSchema}
       >
         {() => (
           <Form>

@@ -1,7 +1,5 @@
-import React from 'react'
+import SelectField from "../SelectField/SelectField";
 
 export const SelectPlan = () => {
-  return (
-    <div>SelectPlan</div>
-  )
-}
+  return <SelectField />;
+};
