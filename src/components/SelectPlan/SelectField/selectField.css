@@ -37,7 +37,20 @@ input[type="radio"] {
   margin: 0px;
 }
 
-.planDescp > p:last-child {
+.planDescp > :not(p:first-child) {
   color: var(--neutral-cool-gray);
+  font-size: small;
   font-weight: 100;
+}
+
+.year-offer {
+  color: var(--primary-purplish-blue) !important;
+  font-size: x-small !important;
+}
+
+.error {
+  position: absolute;
+  color: var(--primary-strawberry-red);
+  left: 590px;
+  font-weight: bolder;
 }

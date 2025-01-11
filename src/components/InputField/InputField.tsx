@@ -7,7 +7,7 @@ interface IInputFieldProps {
   type?: string;
 }
 
-const InputField = ({ label, name, type="input" }: IInputFieldProps) => {
+const InputField = ({ label="", name="", type="input" }: IInputFieldProps) => {
   const [, meta] = useField(name);
   return (
     <div className="input-field">

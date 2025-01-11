@@ -13,8 +13,8 @@ export const formInitialValues: IFormValues = {
   name: "",
   email: "",
   phoneNumber: null,
-  planPeriod: "",
-  plan: "",
+  planPeriod: "Monthly",
+  plan: "Arcade",
   addOns: [""],
 };
 
