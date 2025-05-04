@@ -4,9 +4,10 @@ export interface IFormValues {
   name: string;
   email: string;
   phoneNumber: number | null;
-  planPeriod: string;
+  planPeriod: "Monthly" | "Yearly";
   plan: string;
-  addOns: Array<string>;
+  planPrice: number;
+  addOns: Array<{ name: string; price: number }>;
 }
 
 export const formInitialValues: IFormValues = {
@@ -15,7 +16,8 @@ export const formInitialValues: IFormValues = {
   phoneNumber: null,
   planPeriod: "Monthly",
   plan: "Arcade",
-  addOns: [""],
+  planPrice: 9,
+  addOns: [],
 };
 
 export const FPersonalDetailsSchema = object({

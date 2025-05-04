@@ -2,10 +2,21 @@ import { Field, useFormikContext } from "formik";
 import { IFormValues } from "../../const";
 import { Plans } from "../const";
 import "./selectField.css";
+import { useEffect } from "react";
 
 const SelectField = () => {
-  const { values } = useFormikContext<IFormValues>();
+  const { values, setFieldValue } = useFormikContext<IFormValues>();
+  const isMonthly = values?.planPeriod === "Monthly";
   const plans = Plans;
+
+  useEffect(() => {
+    const selectedPlan = plans.find((plan) => plan.name === values?.plan);
+
+    const value = isMonthly
+      ? selectedPlan?.costPerMonth
+      : selectedPlan?.costPerYear;
+    setFieldValue("planPrice", value);
+  }, [isMonthly, values?.plan]);
 
   return (
     <div className="selectField">
@@ -14,7 +25,7 @@ const SelectField = () => {
           {plan.icon}
           <div className="planDescp">
             <p>{plan.name}</p>
-            {values?.planPeriod === "Monthly" ? (
+            {isMonthly ? (
               <p>${plan.costPerMonth}/mo</p>
             ) : (
               <>

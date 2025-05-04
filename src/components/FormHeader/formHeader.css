@@ -1,5 +1,4 @@
 .formHeader {
-  line-height: 40px;
   padding-bottom: 30px;
   & h1{
     color: var(--primary-marine-blue);

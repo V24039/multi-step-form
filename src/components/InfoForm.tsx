@@ -6,9 +6,10 @@ import { FormHeader } from "./FormHeader/FormHeader";
 import { PersonalInfo } from "./PersonalInfo/PersonalInfo";
 import { AddOns } from "./AddOns/AddOns";
 import { SelectPlan } from "./SelectPlan/SelectPlan";
+import Final from "./Final/Final";
 
 const InfoForm = () => {
-  const [step, setStep] = useState<number>(1);
+  const [step, setStep] = useState<number>(2);
 
   const handleSubmit = (values: IFormValues) => {
     if (step <= 2) {
@@ -20,7 +21,7 @@ const InfoForm = () => {
   };
 
   return (
-    <div>
+    <div className="info-form">
       <FormHeader stepNumber={step} />
       <Formik
         initialValues={formInitialValues}
@@ -30,10 +31,11 @@ const InfoForm = () => {
         // validationSchema={FormDetails[step].validationSchema}
       >
         {() => (
-          <Form>
+          <Form className="form-container">
             {step === 0 && <PersonalInfo />}
             {step === 1 && <SelectPlan />}
             {step === 2 && <AddOns />}
+            {step === 3 && <Final />}
             <div className="buttons">
               <button
                 className="btn-back"
@@ -45,7 +47,12 @@ const InfoForm = () => {
               >
                 Go Back
               </button>
-              <button className="btn-submit" type="submit">Next Step</button>
+              <button
+                className={`${step === 3 ? "btn-submit" : "btn-next"}`}
+                type="submit"
+              >
+                {step === 3 ? "Confirm" : "Next Step"}
+              </button>
             </div>
           </Form>
         )}

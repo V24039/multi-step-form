@@ -1,0 +1,44 @@
+.price-container {
+  background-color: var(--neutral-magnolia);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.descp-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+p {
+  margin: 10px;
+}
+
+.change-button {
+  background-color: inherit;
+  border: none;
+  margin: 0px;
+  padding-left: 10px;
+  cursor: pointer;
+  text-decoration: underline;
+  &:hover {
+    color: var(--primary-purplish-blue);
+  }
+}
+
+.add-on-descp {
+  color: var(--neutral-cool-gray);
+}
+
+.total-pay {
+  font-weight: bold;
+  font-size: large;
+  color: var(--primary-purplish-blue);
+}
+
+.main-field {
+  font-weight: bold;
+  font-size: medium;
+  color: var(--primary-marine-blue);
+}

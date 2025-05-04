@@ -1,9 +1,19 @@
 .app {
-  height: 500px;
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 40px;
-  aspect-ratio: 1.5/1;
+  width: 750px;
+  height: 600px;
+  display: flex;
+  gap: 30px;
+}
+
+.info-form {
+  flex-grow: 1;
+  padding: 40px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .buttons {
@@ -14,6 +24,7 @@
 }
 
 .btn-submit,
+.btn-next,
 .btn-back {
   text-align: center;
   width: 100px;
@@ -23,6 +34,7 @@
 }
 
 .btn-back:hover,
+.btn-next:hover,
 .btn-submit:hover {
   cursor: pointer;
 }
@@ -35,7 +47,12 @@
   }
 }
 
-.btn-submit {
+.btn-next {
   color: var(--neutral-white);
   background-color: var(--primary-marine-blue);
+}
+
+.btn-submit {
+  color: var(--neutral-white);
+  background-color: var(--primary-purplish-blue);
 }

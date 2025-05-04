@@ -1,6 +1,5 @@
 .side-bar {
-  height: 100%;
-  width: 100%;
+  width: 25%;
   background-image: url("/src/assets/images/bg-sidebar-desktop.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -8,12 +7,16 @@
   align-items: flex-start;
   gap: 30px;
   flex-direction: column;
+  padding-left: 20px;
+  padding-top: 15px;
 }
 
 .step-info {
+  width: 100%;
   display: grid;
-  grid: auto / 40px 100px;
-  align-items: end;
+  grid-template-rows: auto;
+  grid-template-columns: 40px auto;
+  align-items: center;
 }
 
 .active {
@@ -42,5 +45,4 @@
 .step-text {
   color: var(--neutral-white);
   font-size: small;
-  line-height: 0px;
 }
