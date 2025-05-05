@@ -51,7 +51,7 @@ const InfoForm = () => {
                 className={`${step === 3 ? "btn-submit" : "btn-next"}`}
                 type="submit"
               >
-                {step === 3 ? "Confirm" : "Next Step"}
+                {step > 3 ? "Confirm" : "Next Step"}
               </button>
             </div>
           </Form>

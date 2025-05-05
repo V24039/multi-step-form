@@ -47,6 +47,7 @@ export const AddOns = () => {
             type="checkbox"
             name="addOns"
             value={addOn.name}
+            defaultChecked={isInputChecked(addOn)}
             onChange={(e) => handleChange(index, e.target.checked)}
           />
           <div className="checkbox-input-descp">

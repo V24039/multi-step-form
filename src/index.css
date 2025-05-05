@@ -1,4 +1,4 @@
-@import url('https://fonts.google.com/specimen/Ubuntu');
+@import url("https://fonts.google.com/specimen/Ubuntu");
 
 :root {
   --primary-marine-blue: hsl(213, 96%, 18%);
@@ -12,10 +12,16 @@
   --neutral-alabaster: hsl(231, 100%, 99%);
   --neutral-white: hsl(0, 0%, 100%);
   font-family: "Ubuntu", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 100vh;
 }
 
 @font-face {
-  font-family: 'Ubuntu-Bold';
+  font-family: "Ubuntu-Bold";
   src: url(src/assets/fonts/Ubuntu-Bold.ttf);
 }
 

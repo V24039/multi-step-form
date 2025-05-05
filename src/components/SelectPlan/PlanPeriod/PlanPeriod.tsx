@@ -3,7 +3,7 @@ import "./planPeriod.css";
 import { IFormValues } from "../../const";
 
 const PlanPeriod = () => {
-  const { setFieldValue } = useFormikContext<IFormValues>();
+  const { values, setFieldValue } = useFormikContext<IFormValues>();
 
   const handleChange = (value: boolean) => {
     setFieldValue("planPeriod", value ? "Yearly" : "Monthly");
@@ -14,6 +14,7 @@ const PlanPeriod = () => {
       <input
         id="planPeriod"
         type="checkbox"
+        defaultChecked={values.planPeriod === "Yearly"}
         onChange={(e) => handleChange(e.target.checked)}
         className="toggleCheck"
       />
