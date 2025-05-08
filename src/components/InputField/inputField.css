@@ -37,13 +37,16 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .error {
-  position: absolute;
   color: var(--primary-strawberry-red);
-  left: 590px;
   font-weight: bolder;
 }
 
 label {
   margin-bottom: 10px;
   font-weight: 600;
+}
+
+.input-label {
+  display: flex;
+  justify-content: space-between;
 }

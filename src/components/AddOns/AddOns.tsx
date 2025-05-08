@@ -24,11 +24,10 @@ export const AddOns = () => {
     }
   };
 
+  // used includes at start but it referentiak check, but the object reference changes every the page is unmounted
+  // hence using some
   const isInputChecked = (addOn: (typeof ADDONSLIST)[0]) =>
-    values.addOns.includes({
-      name: addOn.name,
-      price: isMonthly ? addOn.pricePerMonth : addOn.pricePerYear,
-    });
+    values.addOns.some((selectedOn) => selectedOn.name === addOn.name);
 
   return (
     <div className="add-on">
@@ -47,7 +46,7 @@ export const AddOns = () => {
             type="checkbox"
             name="addOns"
             value={addOn.name}
-            defaultChecked={isInputChecked(addOn)}
+            checked={isInputChecked(addOn)}
             onChange={(e) => handleChange(index, e.target.checked)}
           />
           <div className="checkbox-input-descp">

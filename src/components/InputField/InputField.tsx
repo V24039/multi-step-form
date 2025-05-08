@@ -15,15 +15,17 @@ const InputField = ({
   const [, meta] = useField(name);
   return (
     <div className="input-field">
-      <label style={{ marginBottom: "10px" }}>{label}</label>
+      <div className="input-label">
+        <label style={{ marginBottom: "10px" }}>{label}</label>
+        {meta.touched && meta.error && (
+          <div className="error">{meta.error}</div>
+        )}
+      </div>
       <Field
         className={`text-input ${meta.touched && meta.error && "error-border"}`}
         type={type}
         name={name}
       />
-      {meta.touched && meta.error ? (
-        <div className="error">{meta.error}</div>
-      ) : null}
     </div>
   );
 };

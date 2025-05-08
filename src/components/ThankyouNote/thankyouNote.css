@@ -1,0 +1,30 @@
+.thank-you {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.thank-you h1 {
+  color: var(--primary-marine-blue);
+  margin: 0;
+}
+
+.thank-you p {
+  color: var(--neutral-cool-gray);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.icon {
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 430px) {
+  .thank-you {
+    padding: 0 1rem;
+  }
+}

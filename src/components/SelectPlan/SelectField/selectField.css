@@ -1,7 +1,6 @@
 .selectField {
   width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   gap: 20px;
 }
@@ -52,8 +51,31 @@ input[type="radio"] {
 }
 
 .error {
-  position: absolute;
   color: var(--primary-strawberry-red);
-  left: 590px;
   font-weight: bolder;
+}
+
+@media screen and (max-width: 430px) {
+  .field {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid var(--neutral-light-gray);
+    border-radius: 10px;
+    padding: unset;
+    padding-block: 10px;
+    padding-left: 10px;
+    column-gap: 10px;
+    width: calc(100% - 10px);
+    aspect-ratio: unset;
+    justify-content: unset;
+  }
+  .planDescp > p {
+    padding-top: 5px;
+    margin: 0px;
+    font-weight: bolder;
+  }
+  .selectField {
+    width: 100%;
+    display: unset;
+  }
 }

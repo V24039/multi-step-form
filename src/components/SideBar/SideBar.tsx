@@ -2,15 +2,15 @@ import { Steps } from "./const";
 import "./SideBar.css";
 import { StepInfo } from "./StepInfo";
 
-const SideBar = () => {
+const SideBar = ({ currentPage }: { currentPage: number }) => {
   return (
     <div className="side-bar">
-      {Steps.map((step) => (
+      {Steps.map((step, index) => (
         <StepInfo
           key={step.key}
           stepIndex={step.stepIndex}
           stepName={step.stepName}
-          active
+          active={currentPage === index}
         />
       ))}
     </div>

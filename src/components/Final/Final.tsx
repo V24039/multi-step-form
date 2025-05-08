@@ -2,7 +2,7 @@ import { useFormikContext } from "formik";
 import { IFormValues } from "../const";
 import "./final.css";
 
-const Final = () => {
+const Final = ({ setStep }: { setStep: (value:number) => void }) => {
   const { values } = useFormikContext<IFormValues>();
 
   const { periodText, periodSubtext } =
@@ -22,7 +22,7 @@ const Final = () => {
             <p style={{ marginBottom: "0px" }}>
               {values?.plan} ({values?.planPeriod})
             </p>
-            <button className="change-button add-on-descp">Change</button>
+            <button className="change-button add-on-descp" onClick={() => setStep(1)}>Change</button>
           </div>
           <p>
             ${values?.planPrice}/{periodSubtext}

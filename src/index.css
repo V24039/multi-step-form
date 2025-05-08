@@ -37,3 +37,11 @@ h1 {
 label {
   color: var(--primary-marine-blue);
 }
+
+@media screen and (max-width: 430px) {
+  :root {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+  }
+}

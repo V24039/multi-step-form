@@ -1,7 +1,9 @@
 .app {
-  width: 750px;
+  width: 50vw;
   height: 570px;
-  display: flex;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   padding: 10px;
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -11,12 +13,16 @@
   flex-grow: 1;
   padding: 40px;
   padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  grid-column: span 7 / span 7;
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-grow: 1;
 }
 
 .buttons {
@@ -24,6 +30,7 @@
   flex-direction: row;
   justify-content: space-between;
   justify-items: flex-end;
+  margin-top: auto;
 }
 
 .btn-submit,
@@ -58,4 +65,30 @@
 .btn-submit {
   color: var(--neutral-white);
   background-color: var(--primary-purplish-blue);
+}
+
+@media screen and (max-width: 768px) {
+  .app {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .app {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    border-radius: 5px;
+  }
+  .info-form {
+    position: relative;
+    border-radius: 5px;
+    bottom: 115px;
+    padding: 15px;
+    margin: 35px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: var(--neutral-white);
+  }
 }
